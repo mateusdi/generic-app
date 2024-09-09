@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View} from 'react-native';
 
 
-export  function Sobre() {
+export  function Sobre1() {
 
   return (
 
     <View style={styles.container}>
 
       <View style={styles.form}>
-        <Text style={styles.title}>Sobre</Text>
+        <Text style={styles.title}>Sobre 1.1</Text>
       </View>  
     </View>
   );

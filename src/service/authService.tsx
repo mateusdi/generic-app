@@ -4,7 +4,8 @@ const signIn = (login: string, password: string): Promise<AuthData> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
         
-      if (password == '123') {
+      // if (password == '123') {
+        if (true) {
         resolve({
           token: JWTTokenMock,
           login: login,

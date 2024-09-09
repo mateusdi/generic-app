@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       justifyContent: 'center',
       width: '50%',
-      borderRadius: 8
+      borderRadius: 50
     },
     title: {
         textAlign: 'center',

@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   form: {
-    flex: 0.5,
+    height: 350,
+    minHeight: 300,
     justifyContent: 'center',
     backgroundColor:"#fbf8fc",
     borderRadius: 8
