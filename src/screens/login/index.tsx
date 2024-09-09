@@ -1,9 +1,48 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable} from 'react-native';
+import { Button } from '../../components/inputs/buttons/Button'
+import { Input } from '../../components/inputs/inputs/Input'
+import { useState } from 'react';
+import { useAuth } from '../../contexts/Auth'
 
-export default function LoginScreen(){
+
+
+export  function Login() {
+  const[loading, setLoading] = useState(false);
+  const[login, setLogin] = useState('');
+  const[senha, setSenha] = useState('');
+  const {signIn} = useAuth();
+
+  async function handleLogin(){
+    setLoading(true);
+    await signIn(login,senha);
+    setLoading(false);
+  }
+
   return (
+    
     <View style={styles.container}>
-      <Text>Login</Text>
+      <View style={styles.form}>
+        <Text style={styles.title}>Login</Text>
+
+        <Input
+          placeholder="Login"
+          keyboardType="default"
+          onChangeText={setLogin}
+        />
+
+        <Input
+          placeholder="Senha"
+          keyboardType="default"
+          onChangeText={setSenha}
+        />
+
+        <Button 
+        isLoading={loading}
+        title='Logar' 
+        onPress={() => handleLogin()}
+        />
+
+      </View>  
     </View>
   );
 }
@@ -11,7 +50,17 @@ export default function LoginScreen(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#344e86',
     justifyContent: 'center',
-    alignItems: 'center',
   },
+  title: {
+    textAlign: 'center',
+    fontSize: 30
+  },
+  form: {
+    flex: 0.5,
+    justifyContent: 'center',
+    backgroundColor:"#fbf8fc",
+    borderRadius: 8
+  }
 });
