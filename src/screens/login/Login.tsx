@@ -50,7 +50,7 @@ export  function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#344e86',
+    //backgroundColor: '#344e86',
     justifyContent: 'center',
   },
   title: {

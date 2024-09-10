@@ -17,7 +17,7 @@ export function Router(){
     }
     //se estiver logado, abre a stack autenticado, caso contrario o appStack representa a tela de login
     return(
-        <NavigationContainer>
+        <NavigationContainer >
              {authData ? <TabNavigatorStack/>: <AppStack/> } 
         </NavigationContainer>
   );

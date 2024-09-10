@@ -31,7 +31,7 @@ export function PermissaoStack(){
 
 export function TabNavigatorStack(){
     return(
-        <Stack.Navigator >
+        <Stack.Navigator  screenOptions={{  }}>
             <Stack.Screen name="Permissão" component={Permissao} />
             <Stack.Screen  options={{ headerShown: false}} name="TabNavigator" component={TabNavigator} />
         </Stack.Navigator>
@@ -41,7 +41,7 @@ export function TabNavigatorStack(){
 export function HomeStack(){
 
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{  headerStyle: { backgroundColor: '#12587c', color: 'white' } }}>
             <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
   );
@@ -50,7 +50,7 @@ export function HomeStack(){
 export function ConfiguracaoStack(){
 
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{  headerStyle: { backgroundColor: '#6397FF' } }}>
             <Stack.Screen name="Configurações" component={Configuracao} />
         </Stack.Navigator>
   );
@@ -59,7 +59,7 @@ export function ConfiguracaoStack(){
 export function SobreStack(){
     
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{  headerStyle: { backgroundColor: '#6397FF' } }}>
                 <Stack.Screen name="Sobre" component={Sobre} /> 
                 <Stack.Screen name="Sobre1" component={Sobre1} /> 
         </Stack.Navigator>

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View} from 'react-native';
 import { useAuth } from '../../contexts/Auth';
-
+import CalendarStrip from 'react-native-calendar-strip';
 
 export  function Home() {
   const {authData} = useAuth();
@@ -8,6 +8,12 @@ export  function Home() {
   return (
 
     <View style={styles.container}>
+
+      <View style={styles.Calendar}>
+        <CalendarStrip
+          style={{height:150, paddingTop: 20, paddingBottom: 10}}
+          />
+      </View>
 
       <View style={styles.form}>
       <Text style={styles.title}>Bem vindo, {authData?.name}!</Text>
@@ -19,17 +25,20 @@ export  function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#344e86',
     justifyContent: 'center',
   },
   title: {
     textAlign: 'center',
     fontSize: 30
   },
-  form: {
-    flex: 0.5,
-    justifyContent: 'center',
+  Calendar: {
     backgroundColor:"#fbf8fc",
-    borderRadius: 8
+  },
+  form: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:"#ded9e0",
+    
   }
 });

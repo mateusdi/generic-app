@@ -1,17 +1,38 @@
 import { StyleSheet, Text, View} from 'react-native';
 import { Link } from '@react-navigation/native';
+import {LocaleConfig, Calendar} from 'react-native-calendars';
 
 export  function Sobre() {
-
+  LocaleConfig.locales['pt-Br'] = {
+    monthNames: [
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro'
+    ],
+    monthNamesShort: ['Jan.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+    dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+    dayNamesShort: ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sab.'],
+    today: "Hoje"
+  };
+  LocaleConfig.defaultLocale = 'pt-Br';
   return (
 
     <View style={styles.container}>
-
+      <Calendar/>
       <View style={styles.form}>
-        
+      
 
         <Link to={{ screen: 'Sobre1'}}>
-        <Text style={styles.title}>Sobre</Text>
+        <Text style={styles.title}> >SubMenu</Text>
         </Link>
 
       </View>  
@@ -27,7 +48,8 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 30
+    fontSize: 30,
+    color:'blue'
   },
   form: {
     flex: 0.5,
