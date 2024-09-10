@@ -4,7 +4,10 @@ import { Configuracao } from '../screens/configuracao/Configuracao';
 import { Sobre } from '../screens/sobre/Sobre';
 import { Sobre1 } from '../screens/sobre1/Sobre1';
 
+import { Permissao } from '../screens/login/permissao/Permissao';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TabNavigator } from './TabNavigator';
 
 const Stack  = createNativeStackNavigator();
 
@@ -16,6 +19,24 @@ const Stack  = createNativeStackNavigator();
 //   );
 // }
 
+
+export function PermissaoStack(){
+
+    return(
+        <Stack.Navigator>
+            <Stack.Screen name="Permissao" component={Permissao} />
+        </Stack.Navigator>
+  );
+}
+
+export function TabNavigatorStack(){
+    return(
+        <Stack.Navigator >
+            <Stack.Screen name="Permissão" component={Permissao} />
+            <Stack.Screen  options={{ headerShown: false}} name="TabNavigator" component={TabNavigator} />
+        </Stack.Navigator>
+  );
+}
 
 export function HomeStack(){
 

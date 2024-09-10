@@ -1,15 +1,14 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {  HomeStack, SobreStack, ConfiguracaoStack } from './AuthStack';
+import {  HomeStack, SobreStack, ConfiguracaoStack, PermissaoStack} from './AuthStack';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-
 
 export function TabNavigator(){
     const Tab = createBottomTabNavigator();
-
+  
     return(
-        
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
+       
+        <Tab.Navigator  screenOptions={{ headerShown: false, title: ''}}>
 
             <Tab.Screen name="HomeTab" component={HomeStack}  options={{
                 tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
@@ -23,5 +22,6 @@ export function TabNavigator(){
                  tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />
              }}/>
         </Tab.Navigator>
+   
   );
 }

@@ -1,14 +1,16 @@
 import { StyleSheet, Text, View} from 'react-native';
+import { useAuth } from '../../contexts/Auth';
 
 
 export  function Home() {
+  const {authData} = useAuth();
 
   return (
 
     <View style={styles.container}>
 
       <View style={styles.form}>
-        <Text style={styles.title}>Home</Text>
+      <Text style={styles.title}>Bem vindo, {authData?.name}!</Text>
       </View>  
     </View>
   );

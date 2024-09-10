@@ -11,8 +11,6 @@ export  function Configuracao() {
     <View style={styles.container}>
 
       <View style={styles.form}>
-        <Text style={styles.title}>Configuração</Text>
-
         <Button 
         title='Sair' 
         onPress={() => signOut()}
